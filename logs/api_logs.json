@@ -1,0 +1,16 @@
+[
+    {
+        "time": "2025-12-04 18:22:27",
+        "method": "POST",
+        "path": "/api/student/",
+        "status": 201,
+        "data": {
+            "csrfmiddlewaretoken": "kXor5ScQ3tKjngZDPBiKYM5K8u9pv1JBxlVL78C7C4ISeTEA49khcSJcx4T9CPNd",
+            "full_name": "пп",
+            "last_name": "ррр",
+            "age": "55",
+            "language": "ттт",
+            "phone_number": "99999999"
+        }
+    }
+]
