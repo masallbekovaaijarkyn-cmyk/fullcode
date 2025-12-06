@@ -8,7 +8,25 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
-"""
+"""# settings.py файлында
+import os
+from pathlib import Path
+# from dotenv import load_dotenv # Локалдык иштетүү үчүн гана керек
+# load_dotenv()
+
+# 1. SECRET_KEY'ди чөйрөдөн алуу
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# 2. DEBUG режимин өчүрүү (Серверде ар дайым False болушу керек!)
+# Мисалы, чөйрөдө DEBUG_MODE=True орнотулса гана True болот
+DEBUG = os.environ.get('DEBUG_MODE') == 'True'
+
+# 3. Сервердин домен атын кошуу
+ALLOWED_HOSTS = [
+    'aijarkyn00.pythonanywhere.com', # Сиздин PythonAnywhere домениңиз
+    # Эгерде DEBUG=True болсо, төмөнкү дарек автоматтык түрдө кошулат
+    # бирок production-да аны алып салуу же False кылуу сунушталат.
+]
 
 from pathlib import Path
 
@@ -20,12 +38,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p((y_46ean5v6yt=!y6u8so^9950g@e$$xz(gmrfqtcc1=(i4p'
+# SECRET_KEY = 'django-insecure-p((y_46ean5v6yt=!y6u8so^9950g@e$$xz(gmrfqtcc1=(i4p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
