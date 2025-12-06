@@ -39,9 +39,7 @@ def write_log(method, path, status_code, data=None):
         json.dump(logs, f, indent=4, ensure_ascii=False)
 
 
-# ================================
-#        TELEGRAM SETTINGS
-# ================================
+
 TELEGRAM_BOT_TOKEN = "8554504621:AAEBFe9_0u_RtgH_PoGK4zbfKhL8eZX1bJ4"
 TELEGRAM_CHAT_ID = "-5003090635"
 
@@ -56,9 +54,9 @@ def send_to_telegram(message):
 
 
 
-# ================================
-#        STUDENT POST
-# ================================
+
+
+
 class StudentApplicationCreateView(generics.CreateAPIView):
     queryset = StudentApplication.objects.all()
     serializer_class = StudentApplicationSerializer
@@ -80,16 +78,13 @@ class StudentApplicationCreateView(generics.CreateAPIView):
         )
         send_to_telegram(message)
 
-        # LOG
         write_log("POST", request.path, 201, request.data)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 
-# ================================
-#        JOB POST
-# ================================
+
 class JobApplicationCreateView(generics.CreateAPIView):
     queryset = JobApplication.objects.all()
     serializer_class = JobApplicationSerializer
@@ -113,16 +108,13 @@ class JobApplicationCreateView(generics.CreateAPIView):
         )
         send_to_telegram(message)
 
-        # LOG
         write_log("POST", request.path, 201, request.data)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 
-# ================================
-#      CONTACT GET + POST
-# ================================
+
 class ContactListCreateAPIView(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
