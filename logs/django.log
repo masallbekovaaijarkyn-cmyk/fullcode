@@ -80,3 +80,126 @@ Not Found: /favicon.ico
 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
 "GET /swagger/?format=openapi HTTP/1.1" 200 3531
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2642
+Not Found: /favicon.ico
+"GET /swagger/ HTTP/1.1" 200 2215
+"GET /swagger/?format=openapi HTTP/1.1" 200 3531
+Not Found: /
+"GET / HTTP/1.1" 404 2642
+Not Found: /favicon.ico
+Not Found: /
+"GET / HTTP/1.1" 404 2642
+Method Not Allowed: /api/job/
+"GET /api/job/ HTTP/1.1" 405 9008
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+Internal Server Error: /api/job/
+Traceback (most recent call last):
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x70d6a3327110>: Failed to resolve 'api.telegram.org' ([Errno -3] Temporary failure in name resolution)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8554504621:AAEBFe9_0u_RtgH_PoGK4zbfKhL8eZX1bJ4/sendMessage (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x70d6a3327110>: Failed to resolve 'api.telegram.org' ([Errno -3] Temporary failure in name resolution)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/fullcode/applications/views.py", line 109, in create
+    send_to_telegram(message)
+  File "/home/aijarkyn/fullcode-backend/fullcode/applications/views.py", line 53, in send_to_telegram
+    requests.post(url, data=payload)
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aijarkyn/fullcode-backend/.venv/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8554504621:AAEBFe9_0u_RtgH_PoGK4zbfKhL8eZX1bJ4/sendMessage (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x70d6a3327110>: Failed to resolve 'api.telegram.org' ([Errno -3] Temporary failure in name resolution)"))
+"POST /api/job/ HTTP/1.1" 500 216801
+Method Not Allowed: /api/job/
+"GET /api/job/ HTTP/1.1" 405 9008
+/home/aijarkyn/fullcode-backend/fullcode/fullcode/wsgi.py changed, reloading.
+Watching for file changes with StatReloader
